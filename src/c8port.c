@@ -76,7 +76,6 @@ static void c8_padkeys(void) {
         { 2, -1, KEYLEFT }, { 2, 1, KEYRIGHT }, { 3, -1, KEYLKUP }, { 3, 1, KEYLKDN },
     };
     static int lastb, stickdown[8];
-    { extern int misterjoydpadstrafekey; misterjoydpadstrafekey = (unsigned char)keys[KEYSTRAFE]; }   // MiSTer: d-pad left/right strafe (patch_dpadstrafe_game.py)
     int b = joyb, changed = b ^ lastb, k;
     for (k = 0; k < (int)(sizeof buttons / sizeof buttons[0]); k++) {
         if (changed & (1 << buttons[k].bit)) {
