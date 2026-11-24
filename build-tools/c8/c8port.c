@@ -36,11 +36,11 @@ void keytimerstuff(void) { }
 // keys[] table alone). joyb (the engine's MiSTer joystick update): bits 2..9
 // are the core's eight buttons R B A L Y X Select Start; the d-pad, Menu OK
 // and Start are already the arrow keys, Enter and Escape there. Buttons:
-// R fire, B use, A jump (2026-11-19: as the OSD labels), L run, Y crouch, X strafe, Select map. Sticks:
+// R fire, B jump, A use, L run, Y crouch, X strafe, Select map. Sticks:
 // left moves and strafes, right turns and looks, as keys past a quarter.
 static void c8_padkeys(void) {
     static const struct { int bit, key; } buttons[] = {
-        { 2, KEYFIRE }, { 3, KEYUSE }, { 4, KEYJUMP }, { 5, KEYRUN },
+        { 2, KEYFIRE }, { 3, KEYJUMP }, { 4, KEYUSE }, { 5, KEYRUN },
         { 6, KEYCROUCH }, { 7, KEYSTRAFE }, { 8, KEYMAP },
     };
     static const struct { int axis, sign, key; } sticks[] = {

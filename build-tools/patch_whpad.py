@@ -4,11 +4,10 @@ The game maps four joystick buttons (joyb bits 0..3) to actions. On the
 MiSTer joyb's bits 2..9 are the core's eight buttons in the order of its J1
 list, R B A L Y X Select Start (bits 0 and 1 are the OSD's Menu OK/Back, and
 the d-pad presses the arrow keys): the eight are mapped by default to
-  R fire, B use, A jump, L run, Y cast spell, X use potion, Select map,
+  R fire, B jump, A use, L run, Y cast spell, X use potion, Select map,
   Start nothing (Enter in the menus).
 The joystick is always on. The game's own setup screen still shows the first
 four of these as its joystick buttons 1..4.
-2026-11-19: A and B swapped to match the OSD labels (A Jump, B Open) and every other Build game on the MiSTer.
 usage: patch_whpad.py <jfwhaven>
 """
 import os, sys
@@ -36,7 +35,7 @@ edit('src/whinp.c', [
     ('''	 butbit[]={0x1,0x2,0x4,0x8,0x10,0x20,0x40,0x80};
 ''', '''#ifdef MISTER_HYBRID
 	 // MiSTer: the core's eight buttons, joyb bits 2..9 (R B A L Y X Select Start)
-	 butbit[]={0x4,0x10,0x8,0x20,0x40,0x80,0x100,0x200}; // 2026-11-19: A jump, B use
+	 butbit[]={0x4,0x8,0x10,0x20,0x40,0x80,0x100,0x200};
 #else
 	 butbit[]={0x1,0x2,0x4,0x8,0x10,0x20,0x40,0x80};
 #endif
